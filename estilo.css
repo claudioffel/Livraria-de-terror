@@ -1,0 +1,444 @@
+* { /* esse asteristico é pra mudar as configurações gerais, to ajustando as margens padrões do site*/ 
+    margin: 0px; 
+    padding: 0px; /* é o preenchimento, usado para criar espaço ao redor do conteúdo de um elemento*/
+    box-sizing: border-box;
+    outline: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /*fonte do texto*/
+  }
+  
+  :root { /*pseudo classe, elemento raiz do documento*/
+    --red: darkred;
+    --roxo: MediumPurple;
+    --gray: DarkGray;
+    --black: black;
+  }
+  
+  html,
+  body {
+    width: 100%; /*largura*/
+    overflow-x: hidden; /*para não ter barra de rolagem*/
+  }
+  
+  header {
+    width: 100%;
+    height: 500px; /*altura*/
+    background: var(--red);
+  }
+
+  .barra {
+  max-width: 1000px; /*se tiver espaço, o maximo de altura é mil*/
+  min-width: 300px; /*se não tiver, o minimo de altura é 300*/
+  margin: 0 auto; /*margem para alinhar ao centro*/
+  display: flex; /*sobrepor os elementos da tela sem reposicionar*/
+  flex-direction: column; 
+  padding: 10px; 
+  }
+
+  nav {
+    width: 100%;
+    height: 125px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logotipo {
+    font-size: 24px;
+    color: var(--roxo);
+    cursor: pointer;
+    text-shadow:#000 -1px -1px
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  nav ul li {
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    text-shadow:#000 -1px -1px /*cor do contorno*/
+  }
+
+  nav ul li a {
+    color: var(--roxo);
+    text-decoration: none;
+    
+  }
+
+  nav ul button {
+    text-shadow:#000;
+    border: 3px solid var(--roxo);
+    background: transparent;
+    padding: 8px 40px;
+    cursor: pointer;
+    margin-left: 30px;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+  nav ul button:hover { /*para poder passar o mouse la em cima*/
+    transition: background, color 0.6s; /*quando passar o mouse mudar a cor de fundo do login*/
+    background: var(--roxo);
+    color: white;
+  }
+
+  .barra .header-block {/*configurando esse bloco enorme que está em cima*/
+    max-width: 1000px;
+    min-width: 300px;
+    height: 450px;
+    background: var(--black);
+    border-radius: 8px;
+    box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5); /*os 3 primeiros numeros são as cores, o ultimo a transparência*/
+    -webkit-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5); /*para funcionar no safari*/
+    -moz-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5); /*para funcionar no mozila*/
+    position: relative;/**/
+    z-index: 10;
+    padding: 10px;
+  }
+
+  .header-block img {/*configurando a imagem que ta nesse bloco*/
+    width: 65%; /*arrumando o tamanho*/
+    position: absolute;
+    right: 2%; /*posição 2% a direita*/
+    bottom: 2%; /*posição 2% em baixo*/
+  }
+
+  .header-block .texto {
+    position: absolute;
+    bottom: 30%;
+    left: 15%;
+  }
+  
+  .header-block .texto h2 {/*configurando o texto acima*/
+    color: white;
+    margin-bottom: 20px;
+    text-align: right;
+    transform: translateX(-90px);
+    transition: transform 0.5s;
+  }
+  
+  .header-block .texto p {/*configurando o texto abaixo*/
+    max-width: 280px;
+    color: white;
+    text-align: right;
+    transform: translateX(-20px);
+    transition: transform 0.4s;
+  }
+
+  /*------------------------------------------------*/
+  /*AGORA COMEÇAR A PARTE PARA CATALOGAR OS PRODUTOS*/
+  /*------------------------------------------------*/
+
+  section .catalogo {
+    width: 100vw; /*largura de 100% da largura da tela*/
+    padding: 100px;
+  }
+  
+  section .filtro-livro {
+    width: 980px;
+    height: 230px;
+    background: var(--red);
+    border-radius: 8px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lupa-input {
+    width: 700px;
+    height: 50px;
+    border: none;
+    border-radius: 4px 0px 0px 4px;
+    text-indent: 10px;
+  }
+  
+  .buscar {/*configurando o botão de busca*/
+    width: 150px;
+    height: 50px;
+    border-radius: 0px 4px 4px 0px;
+    border: none;
+    background: var(--roxo);
+    color: white;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: 0.2s ease;
+  }
+  
+  .buscar:hover {/*as cores do botão de busca*/
+    background: var(--black);
+    color: var(--roxo);
+  }
+
+  section .card {/*para organizar a posição dos livros*/
+    
+    height: 100%; /*altura*/
+    display: grid; /*grid é pra configurar o layout em duas dimensões, configurando linha e coluna*/
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); /*esse comando é para poder criar coluna*/
+    grid-gap: 60px; /*espaço entre os livros*/
+    padding-top: 40px; /*distancia do livro pra barra de cima*/
+  }
+
+  section .card-item {
+    width: auto;
+    height: auto;
+    text-align: center;
+    background: var(--red);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .card-conteudo { /*espaçamento em baixo da imagem do livro*/
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .card-item img { /*tamanho da imagem*/
+    width: 80%;
+  }
+  
+  .card-item h3 {
+    color: white
+  }
+  
+  .card-item p {
+    width: 90%;
+    font-style: verdana;
+    color: white;
+  }
+  
+  .card-item button {
+    max-width: 300px;
+    min-width: 100px;/*padronização do tamanho de todos os botões*/
+    padding: 15px 0px;
+    border: none;
+    background: var(--black);
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  .card-item button:hover {
+    background: #dedede;
+    color: var(--black);
+  }
+
+  /*------------------------------------------------*/
+  /*ESTILIZANDO A PARTE DA PROMOÇÃO*/
+  /*------------------------------------------------*/
+
+  .sobre { /*estilizando a classe sobre*/
+    width: 100%;
+    height: 100%;
+    display: flex; /*alinhar os itens internamente*/
+    align-items: center; /*alinhar tudo ao centro horizontalmente*/
+    justify-content: center; /*alinhar tudo ao centro verticalmente*/
+    padding: 50px 10px;
+  }
+  
+  .titulo-sobre {
+    height: 80px;
+    background: black;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 10px;
+    align-items: center;
+    color: white;
+  }
+
+  .conteudo-mais { /*estilizando a posição, centralização do grande conteudo do texto*/
+    max-width: 1000px;
+    min-width: 300px;
+    height: 600px;
+    background: black;
+    margin: 0 auto;
+    border-radius: 8px;
+    z-index: 10; /*é pra ficar em cima de qualquer outro elemento que possa surgir*/
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+  }
+
+  .esquerda { /*estilizando a imagem da esquerda*/
+    width: 25%;
+    min-width: 300px;
+    height: 100%;
+    background: white;
+    border-radius: 8px;
+  }
+  
+  .direita { /*estilizando a imagem da direita*/
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 10%;
+  }
+
+  .direita h {
+    text-align: center;
+    width: 90%;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+
+
+  /*----------------------*/
+  /*CONFIGURANDO O RODAPÉ*/
+  /*---------------------*/
+
+  footer {/*padronização geral do footer*/
+    width: 100%;
+    height: 250px;
+  }
+
+  footer .rodape { /*configurando a região do rodape*/
+    width: 100%;
+    height: 200px;
+    background: var(--red);
+    padding: 20px 10px;
+  }
+
+  .rodape-links {
+    max-width: 1000px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-left: 13%;/*usei isso para centralizar o conteudo*/
+    color: white;
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .companhia,
+  .aluguel,
+  .contatos,
+  .redes-sociais {
+    color: white;
+    height: 100%;
+    min-height: 100px;
+  }
+
+  .rodape-links h4 {
+    margin-bottom: 10px;
+  }
+  
+  .rodape-links {
+    margin-bottom: 8px;
+    
+  }
+  
+  .rodape .redes-sociais img {
+    width: 32px;
+    height: 32px;
+  }
+
+  footer .final {
+    width: 100%;
+    height: 50px;
+    background: var(--black);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /*---------------------------------------------------*/
+  /*AJUSTE RESPONSIVO PARA ABRIR EM OUTROS DISPOSITIVOS*/
+  /*---------------------------------------------------*/
+
+  @media (max-width: 576px) {
+    nav ul li {
+      display: none;
+    }
+  
+    .header-block img {
+      width: 70%;
+      position: absolute;
+      right: 16%;
+      top: 30%;
+    }
+  
+    .header-block .texto {
+      position: absolute;
+      bottom: 10%;
+      left: 15;
+    }
+  
+    section .filtro-livro {
+      width: 390px;
+      padding: 0px 10px;
+    }
+  
+    .lupa-input {
+      max-width: 700px;
+      min-width: 240px;
+    }
+  
+    .buscar {
+      max-width: 150px;
+      min-width: 80px;
+    }
+  
+    .sobre {
+      margin-top: 100px;
+    }
+  
+    .titulo-sobre {
+      margin-bottom: 20px;
+    }
+    .conteudo-mais {
+      flex-direction: column;
+      height: 100%;
+    }
+    .esquerda {
+      display: none;
+    }
+    .direita {
+      width: 90%;
+    }
+  
+    .direita p {
+      width: 100%;
+      margin: 0px;
+      text-align: left;
+    }
+  
+    footer {
+      height: 100%;
+    }
+  
+    footer .rodape {
+      height: 100%;
+    }
+  
+    .rodape-links {
+      flex-direction: column;
+      padding-left: 10%;
+    }
+  }

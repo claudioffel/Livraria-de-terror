@@ -1,0 +1,105 @@
+body{
+    background-color: #363636; /*cor de fundo*/
+    font-family: Arial, Helvetica, sans-serif; /*fonte da letra*/
+    overflow: hidden;
+    background-image: url(../imagens/imagem-de-fundo.jpg); 
+    background-repeat: no-repeat; /*nao vai repetir a imagem*/
+    background-size: cover; /*vai preencher a imagem ao máximo*/ 
+}
+
+h1{
+    font-size: 30px; 
+    padding:10px;
+    color: MediumPurple;
+    text-shadow: black -1px -1px
+}
+
+.area-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color: #8B0000; /*cor de fundo*/
+    width: 600px;
+    height: 500px;
+    padding: 35px;
+    border-radius: 30px; /*cantos arredondados*/
+}
+
+.login form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.login input{
+    margin-top: 10px;
+    background-color: white; /*cor de fundo*/
+    border: none; /*sem borda*/
+    height: 30px;
+    border-radius: 8px; /*cantos arredondados*/
+    color: black; /*cor da fonte dentro da caixa*/
+    padding-left: 10px; /*espaçamento a erquerda dentro caixa de login*/
+}
+
+.login img{
+    width: 130px;
+    height: auto;
+}
+
+input ::placeholder{
+    color: rgb(31, 3, 31);
+    font-size: 14px;
+}
+
+.texto {
+    color: white;
+}
+
+form [type="submit"]{ /*estilizando o botão enviar*/
+    display: block;
+    background-color: black;
+    font-size: 16px;
+    text-transform: uppercase; /*deixa a fonte em caixa alta*/
+    font-weight: bold; /*deixa o botão destacado*/
+    cursor: pointer; /* indica que é um link botão de ação*/
+    color: white;
+}
+
+a{
+    color: rgb(238, 238, 238);
+    text-decoration: none; /*tira a barra embaixo do link*/
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.lista-social{
+    display: flex;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.social-face{
+    color: #00028b;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.social-insta{
+    color: #b60079;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.social-twit{
+    color: #02998c;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
